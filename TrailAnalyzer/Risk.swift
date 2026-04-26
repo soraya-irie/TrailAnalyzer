@@ -9,4 +9,8 @@ enum Risk: String, Identifiable, CaseIterable {
     var id: String {
         rawValue
     }
+
+    var image: String {
+        rawValue
+    }
 }
