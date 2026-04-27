@@ -10,6 +10,15 @@ struct PredictionView: View {
         }
         .navigationTitle("Results")
         .navigationBarTitleDisplayMode(.large)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                NavigationLink {
+
+                } label: {
+                    Image(systemName: "info.circle")
+                }
+            }
+        }
         .trailTheme()
     }
 }
