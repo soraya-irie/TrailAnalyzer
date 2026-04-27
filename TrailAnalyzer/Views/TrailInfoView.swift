@@ -25,6 +25,10 @@ struct TrailInfoView: View {
                     }
                 }
                 .tint(Color.black)
+                .background(RoundedRectangle(cornerRadius: 12)
+                    .fill(Color.gray.opacity(0.15))
+                    .opacity(trailInfo.terrain == nil ? 0.0 : 1.0)
+                )
             }
 
             TrailField(iconName: "exclamationmark.triangle.fill", label: "Danger from wildlife") {
