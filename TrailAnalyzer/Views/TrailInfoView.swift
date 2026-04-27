@@ -10,28 +10,31 @@ struct TrailInfoView: View {
                     .keyboardType(.numberPad)
             }
 
-            Text("Elevation Change")
-            TextField("meters", value: $trailInfo.elevation, format: .number)
-                .keyboardType(.numberPad)
+            TrailField(iconName: "mountain.2.fill", label: "Elevation Change") {
+                TextField("meters", value: $trailInfo.elevation, format: .number)
+                    .keyboardType(.numberPad)
+            }
 
-            Text("Terrain")
-            Picker("Terrain", selection: $trailInfo.terrain) {
-                ForEach(Terrain.allCases) { terrain in
-                    Text(terrain.rawValue.capitalized)
-                        .tag(terrain)
+            TrailField(iconName: "shoe.fill", label: "Terrain") {
+                Picker("Terrain", selection: $trailInfo.terrain) {
+                    ForEach(Terrain.allCases) { terrain in
+                        Text(terrain.rawValue.capitalized)
+                            .tag(terrain)
+                    }
                 }
+                .tint(Color.black)
             }
-            .tint(Color.black)
 
-            Text("Danger from wildlife")
-            Picker("Danger from wildlife", selection: $trailInfo.wildlifeDangerLevel) {
-                Text("Low")
-                    .tag(TrailInfo.lowDanger)
-                Text("High")
-                    .tag(TrailInfo.highDanger)
+            TrailField(iconName: "exclamationmark.triangle.fill", label: "Danger from wildlife") {
+                Picker("Danger from wildlife", selection: $trailInfo.wildlifeDangerLevel) {
+                    Text("Low")
+                        .tag(TrailInfo.lowDanger)
+                    Text("High")
+                        .tag(TrailInfo.highDanger)
+                }
+                .frame(width: 110)
+                .pickerStyle(.segmented)
             }
-            .frame(width: 110)
-            .pickerStyle(.segmented)
         }
     }
 }
