@@ -9,16 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ScrollView {
-            VStack {
-                Image(systemName: "globe")
-                    .imageScale(.large)
-                    .foregroundStyle(.tint)
-                Text("Hello, world!")
+        NavigationStack {
+            ScrollView {
+                VStack {
+                    Image(systemName: "globe")
+                        .imageScale(.large)
+                        .foregroundStyle(.tint)
+                    Text("Hello, world!")
+                }
+                .padding()
             }
-            .padding()
+            .navigationTitle("Trail Analyzer")
+            .trailTheme()
         }
-        .trailTheme()
     }
 }
 
