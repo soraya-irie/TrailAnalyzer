@@ -23,7 +23,14 @@ struct TrailInfoView: View {
             .tint(Color.black)
 
             Text("Danger from wildlife")
-
+            Picker("Danger from wildlife", selection: $trailInfo.wildlifeDangerLevel) {
+                Text("Low")
+                    .tag(TrailInfo.lowDanger)
+                Text("High")
+                    .tag(TrailInfo.highDanger)
+            }
+            .frame(width: 110)
+            .pickerStyle(.segmented)
         }
     }
 }
