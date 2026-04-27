@@ -12,10 +12,10 @@ struct TrailAnalyzer {
             }
 
             let input = TrailAnalyzerModelInput(
-                distance: 1,
-                elevation: 0,
-                terrain: "paved",
-                dangerous: 0
+                distance: Int64(distance),
+                elevation: Int64(trailInfo.elevation ?? 0),
+                terrain: terrain.rawValue,
+                dangerous: Int64(trailInfo.wildlifeDangerLevel)
             )
             let predictedRisk = try model.prediction(input: input).risk
 
