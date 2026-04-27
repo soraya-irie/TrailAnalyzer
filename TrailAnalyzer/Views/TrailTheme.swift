@@ -11,7 +11,9 @@ struct TrailTheme: ViewModifier {
                 Spacer()
             }
             content
+                .padding(.horizontal)
         }
+        .background(Color(white: 0.94))
     }
 }
 
