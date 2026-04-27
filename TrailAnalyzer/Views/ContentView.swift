@@ -1,26 +1,18 @@
-//
-//  ContentView.swift
-//  TrailAnalyzer
-//
-//  Created by soraya irie on 2026/04/25.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    @State private var trailInfo = TrailInfo()
+
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack {
-                    Image(systemName: "globe")
-                        .imageScale(.large)
-                        .foregroundStyle(.tint)
-                    Text("Hello, world!")
-                }
-                .padding()
+                TrailInfoView(trailInfo: $trailInfo)
             }
             .navigationTitle("Trail Analyzer")
             .trailTheme()
+        }
+        .onAppear {
+            trailInfo = .sample
         }
     }
 }
