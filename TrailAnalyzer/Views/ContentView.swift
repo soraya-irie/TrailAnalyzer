@@ -17,7 +17,9 @@ struct ContentView: View {
                 TrailInfoView(trailInfo: $trailInfo)
 
                 NavigationLink {
-
+                    let analyzer = TrailAnalyzer()
+                    let risk = analyzer.predictRisk(trailInfo: trailInfo)
+                    RiskCard(risk: risk)
                 } label: {
                     Text("Submit")
                         .font(.headline)
