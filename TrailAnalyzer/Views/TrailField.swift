@@ -3,7 +3,7 @@ import SwiftUI
 struct TrailField<Content: View>: View {
     var iconName: String
     var label: String
-    var content: Content
+    @ViewBuilder var content: Content
 
     var body: some View {
         HStack {
@@ -23,6 +23,8 @@ struct TrailField<Content: View>: View {
 }
 
 #Preview {
-    TrailField(iconName: "figure.hiking", label: "Label", content: Text("Content"))
-        .trailTheme()
+    TrailField(iconName: "figure.hiking", label: "Label") {
+        Text("Content")
+    }
+    .trailTheme()
 }
