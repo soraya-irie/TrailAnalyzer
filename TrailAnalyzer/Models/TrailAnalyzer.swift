@@ -12,6 +12,7 @@ struct TrailAnalyzer {
                 terrain: "paved",
                 dangerous: 0
             )
+            let predictedRisk = try model.prediction(input: input).risk
         } catch {
 
         }
