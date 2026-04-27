@@ -8,11 +8,13 @@ struct TrailInfoView: View {
             TrailField(iconName: "figure.hiking", label: "Distance") {
                 TextField("kilometers", value: $trailInfo.distance, format: .number)
                     .keyboardType(.numberPad)
+                    .multilineTextAlignment(.trailing)
             }
 
             TrailField(iconName: "mountain.2.fill", label: "Elevation Change") {
                 TextField("meters", value: $trailInfo.elevation, format: .number)
                     .keyboardType(.numberPad)
+                    .multilineTextAlignment(.trailing)
             }
 
             TrailField(iconName: "shoe.fill", label: "Terrain") {
