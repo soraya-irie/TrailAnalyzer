@@ -13,6 +13,17 @@ struct TrailAnalyzer {
                 dangerous: 0
             )
             let predictedRisk = try model.prediction(input: input).risk
+
+            switch predictedRisk {
+            case 0..<20:
+                return .easy
+            case 20..<50:
+                return .moderate
+            case 50..<100:
+                return .difficult
+            default:
+                return .highRisk
+            }
         } catch {
 
         }
