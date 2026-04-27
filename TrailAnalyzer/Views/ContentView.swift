@@ -33,6 +33,7 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("Trail Analyzer")
+            .scrollDismissesKeyboard(.interactively)
             .trailTheme()
         }
         .tint(Color.trailTheme)
