@@ -6,6 +6,14 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
+                HStack {
+                    Text("Enter the data about your upcoming hike")
+                        .font(.subheadline)
+                        .bold()
+                    Spacer()
+                }
+                .padding(.bottom)
+
                 TrailInfoView(trailInfo: $trailInfo)
             }
             .navigationTitle("Trail Analyzer")
