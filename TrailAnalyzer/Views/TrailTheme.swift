@@ -2,7 +2,16 @@ import SwiftUI
 
 struct TrailTheme: ViewModifier {
     func body(content: Content) -> some View {
-        content
+        ZStack {
+            VStack {
+                Image("Background")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .ignoresSafeArea()
+                Spacer()
+            }
+            content
+        }
     }
 }
 
