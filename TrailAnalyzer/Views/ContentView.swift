@@ -19,7 +19,7 @@ struct ContentView: View {
                 NavigationLink {
                     let analyzer = TrailAnalyzer()
                     let risk = analyzer.predictRisk(trailInfo: trailInfo)
-                    RiskCard(risk: risk)
+                    PredictionView(predictedRisk: risk)
                 } label: {
                     Text("Submit")
                         .font(.headline)
