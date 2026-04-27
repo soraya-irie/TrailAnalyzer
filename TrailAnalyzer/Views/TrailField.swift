@@ -8,6 +8,10 @@ struct TrailField<Content: View>: View {
     var body: some View {
         HStack {
             Image(systemName: iconName)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 40, height: 40)
+                .padding(.trailing, 8)
             Text(label)
             Spacer()
             content
@@ -17,4 +21,5 @@ struct TrailField<Content: View>: View {
 
 #Preview {
     TrailField(iconName: "figure.hiking", label: "Label", content: Text("Content"))
+        .trailTheme()
 }
