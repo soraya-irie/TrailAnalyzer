@@ -14,8 +14,16 @@ struct TrailInfoView: View {
                 .keyboardType(.numberPad)
 
             Text("Terrain")
+            Picker("Terrain", selection: $trailInfo.terrain) {
+                ForEach(Terrain.allCases) { terrain in
+                    Text(terrain.rawValue.capitalized)
+                        .tag(terrain)
+                }
+            }
+            .tint(Color.black)
 
             Text("Danger from wildlife")
+
         }
     }
 }
