@@ -16,6 +16,9 @@ struct TrailField<Content: View>: View {
             Spacer()
             content
         }
+        .padding(.vertical, 24)
+        .padding(.horizontal, 16)
+        .background(.white, in: RoundedRectangle(cornerRadius: 12))
     }
 }
 
