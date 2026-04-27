@@ -25,8 +25,8 @@ struct TrailAnalyzer {
                 return .highRisk
             }
         } catch {
-
+            return .highRisk
         }
-        return .highRisk
+
     }
 }
