@@ -6,8 +6,12 @@ struct TrailInfoView: View {
     var body: some View {
         VStack {
             Text("Distance")
+            TextField("kilometers", value: $trailInfo.distance, format: .number)
+                .keyboardType(.numberPad)
 
             Text("Elevation Change")
+            TextField("meters", value: $trailInfo.elevation, format: .number)
+                .keyboardType(.numberPad)
 
             Text("Terrain")
 
