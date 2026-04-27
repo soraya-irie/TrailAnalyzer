@@ -35,6 +35,7 @@ struct ContentView: View {
             .navigationTitle("Trail Analyzer")
             .trailTheme()
         }
+        .tint(Color.trailTheme)
         .onAppear {
             trailInfo = .sample
         }
