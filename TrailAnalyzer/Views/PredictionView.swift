@@ -8,9 +8,14 @@ struct PredictionView: View {
             RiskCard(risk: predictedRisk)
             Spacer()
         }
+        .navigationTitle("Results")
+        .navigationBarTitleDisplayMode(.large)
+        .trailTheme()
     }
 }
 
 #Preview {
-    PredictionView(predictedRisk: .moderate)
+    NavigationStack {
+        PredictionView(predictedRisk: .moderate)
+    }
 }
