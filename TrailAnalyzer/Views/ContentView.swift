@@ -15,6 +15,20 @@ struct ContentView: View {
                 .padding(.bottom)
 
                 TrailInfoView(trailInfo: $trailInfo)
+
+                NavigationLink {
+
+                } label: {
+                    Text("Submit")
+                        .font(.headline)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(
+                            .tint,
+                            in: RoundedRectangle(cornerRadius: 12)
+                        )
+                        .foregroundStyle(.white)
+                }
             }
             .navigationTitle("Trail Analyzer")
             .trailTheme()
